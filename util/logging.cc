@@ -10,7 +10,9 @@
 #include <stdlib.h>
 #include "leveldb/env.h"
 #include "leveldb/slice.h"
-
+#ifdef _MSC_VER 
+#define snprintf sprintf_s 
+#endif
 namespace leveldb {
 
 void AppendNumberTo(std::string* str, uint64_t num) {

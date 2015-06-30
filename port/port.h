@@ -17,5 +17,8 @@
 #elif defined(LEVELDB_PLATFORM_ANDROID)
 #  include "port/port_android.h"
 #endif
+#if defined(LEVELDB_PLATFORM_WINDOWS)
+#include "port/port_win.h"
+#endif
 
 #endif  // STORAGE_LEVELDB_PORT_PORT_H_

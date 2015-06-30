@@ -48,10 +48,12 @@
 #ifdef __linux
 #include <sys/sysinfo.h>
 #include <linux/unistd.h>
+#else
+#define BOOST_ALL_NO_LIB
 #endif
 
 #include <fstream>
-
+#define BOOST_LIB_DIAGNOSTIC
 // Boost includes - see WINDOWS file to see which modules to install
 #include <boost/date_time/gregorian/gregorian.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>

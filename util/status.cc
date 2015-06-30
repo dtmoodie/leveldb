@@ -5,9 +5,11 @@
 #include <stdio.h>
 #include "port/port.h"
 #include "leveldb/status.h"
+typedef __int32 int32_t;
+typedef unsigned __int32 uint32_t;
 
 namespace leveldb {
-
+	
 const char* Status::CopyState(const char* state) {
   uint32_t size;
   memcpy(&size, state, sizeof(size));
@@ -32,7 +34,9 @@ Status::Status(Code code, const Slice& msg, const Slice& msg2) {
   }
   state_ = result;
 }
-
+#ifdef _MSC_VER 
+#define snprintf sprintf_s 
+#endif
 std::string Status::ToString() const {
   if (state_ == NULL) {
     return "OK";
