@@ -49,7 +49,7 @@
 #include <sys/sysinfo.h>
 #include <linux/unistd.h>
 #else
-#define BOOST_ALL_NO_LIB
+//#define BOOST_ALL_NO_LIB
 #endif
 
 #include <fstream>
